@@ -2,8 +2,6 @@ services:
   blog:
     image: 0xarnout/blog:0.1.0
     user: 800:800
-    ports:
-      - "127.0.0.1:8080:8080/tcp"
     environment:
       DATABASE_URL: mysql://blog@db/blog
       DATABASE_PASSWORD_FILE: /run/secrets/db_password
@@ -11,6 +9,10 @@ services:
       db:
         condition: service_healthy
         restart: true
+    networks:
+      default:
+      proxy:
+        ipv4_address: 172.23.0.3
     volumes:
       - type: bind
         source: ./volumes/uploads
@@ -44,3 +46,7 @@ secrets:
     file: secrets/db_password.txt
   db_root_password:
     file: secrets/db_root_password.txt
+networks:
+  proxy:
+    name: proxy
+    external: true
