@@ -1,0 +1,5 @@
+Types: deb
+URIs: http://nginx.org/packages/mainline/debian
+Suites: bookworm
+Components: nginx
+Signed-by: /usr/share/keyrings/nginx-archive-keyring.gpg

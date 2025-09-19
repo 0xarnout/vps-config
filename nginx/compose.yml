@@ -1,6 +1,6 @@
 services:
   nginx:
-    image: nginx:mainline
+    build: .
     ports:
       - 80:80
       - 433:433
