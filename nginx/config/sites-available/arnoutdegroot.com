@@ -3,7 +3,7 @@ resolver 127.0.0.1:53;
 acme_issuer letsencrypt {
     uri         https://acme-v02.api.letsencrypt.org/directory;
     contact     contact@arnoutdegroot.com;
-    state_path  /var/cache/nginx/acme-certificates
+    state_path  /var/cache/nginx/acme-certificates;
     accept_terms_of_service;
 }
 
@@ -15,8 +15,9 @@ server {
     location /.well-known/acme-challenge {
         return 404;
     }
-
-    return 301 https://www.arnoutdegroot.com$request_uri;
+    location / {
+        return 301 https://www.arnoutdegroot.com$request_uri;
+    }
 }
 
 server {
