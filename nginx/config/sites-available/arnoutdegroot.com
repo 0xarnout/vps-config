@@ -44,7 +44,7 @@ server {
     ssl_certificate_key   $acme_certificate_key;
 
     location / {
-        proxy_pass http://172.23.0.3:8080;
+        proxy_pass http://127.0.0.1:8080;
         proxy_redirect off;
     }
 }
