@@ -1,9 +1,9 @@
 # Never prefer packages from nginx.org
 Package: *
-Pin: origin http://nginx.org/packages/mainline/debian
+Pin: origin nginx.org
 Pin-Priority: 1
 
 # Allow upgrading only my-specific-software from nginx.org
 Package: nginx nginx-module-acme
-Pin: origin http://nginx.org/packages/mainline/debian
+Pin: origin nginx.org
 Pin-Priority: 500

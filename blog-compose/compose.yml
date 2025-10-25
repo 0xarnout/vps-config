@@ -2,7 +2,7 @@ services:
   blog:
     image: 0xarnout/blog:0.1.0
     ports:
-      - 127.0.0.1:8080:8080
+      - "127.0.0.1:8080:8080/tcp"
     user: 800:800
     environment:
       DATABASE_URL: mysql://blog@db/blog

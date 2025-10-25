@@ -7,7 +7,7 @@ cp nginx/apt/nginx.preferences /etc/apt/preferences.d/nginx
 
 # Install nginx
 apt-get update
-apt-get install nginx nginx-acme-module --yes
+apt-get install nginx nginx-module-acme --yes
 
 #
 cp nginx/config/nginx.conf /etc/nginx/nginx.conf
@@ -31,4 +31,4 @@ dd if=/dev/urandom bs=32 count=1 2>/dev/null | base64 --wrap 0 > blog-compose/se
 mkdir -p blog-compose/volumes/uploads
 
 ## A systemd service should be created to run this service.
-## For now, `docker compose up -d` in `blog-compose` should be used.
+## For now, `docker compose up -d` in ./blog-compose should be used.
