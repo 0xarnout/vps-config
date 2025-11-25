@@ -1,0 +1,14 @@
+[Unit]
+Description=blog service with docker compose
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+WorkingDirectory=/srv/blog-compose
+ExecStart=/usr/bin/docker compose up --wait --remove-orphans
+ExecStop=/usr/bin/docker compose down
+
+[Install]
+WantedBy=multi-user.target
